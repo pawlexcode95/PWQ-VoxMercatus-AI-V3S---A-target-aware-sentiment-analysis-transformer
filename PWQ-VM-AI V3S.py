@@ -45,7 +45,7 @@ class Global:
         for i in range(iteration):
             start += 1
             start = start
-# ===========| Activation Methods Class |======================================#
+# ===========| Activation Methods Class |=====================================#
 class actv:
     @staticmethod
     def softmax(x: torch.Tensor, dim=0) -> torch.Tensor:
