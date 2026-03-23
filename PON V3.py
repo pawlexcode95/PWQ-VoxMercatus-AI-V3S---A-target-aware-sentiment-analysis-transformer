@@ -10,7 +10,7 @@ class DebugPrint:
     def _log(self, msg:str) -> None:
         if self.condition:
             print(f"\n==========| {msg} |==========")
-# =======| PWQ PON V2 Class |===================================================================================================#
+# =======| PWQ PON V2 Class |==================================================================================================#
 class PWQ_PON_V_3_0:
     def __init__(self, matrix:torch.tensor=None):
         self.d = matrix.device
