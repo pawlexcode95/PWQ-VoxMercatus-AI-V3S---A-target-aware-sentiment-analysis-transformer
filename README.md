@@ -1,11 +1,13 @@
-# PWQ-VoxMercatus-AI-V3S---A-target-aware-sentiment-analysis-transformer
-PWQ-VoxMercatus-AI
-Project Card: PWQ-VM-AI V3S (Vox Mercatus AI)
+# PWQVoxMercatusAI-V3S-TASA-transformer
 
-Project Title: PWQ-VM-AI – Utilizing a Custom Target-Aware Transformer Neural
+# Project Card: PWQ-VM-AI V3S (Vox Mercatus AI)
+
+# Project Title: PWQ-VM-AI – 
+Utilizing a Custom Target-Aware Transformer Neural
 Network to map emotional intensity as a leading indicator of a product’s success.
 
-I. Project Overview. PWQ-VM-AI is an advanced machine-learning project in
+# I. Project Overview. 
+PWQ-VM-AI is an advanced machine-learning project in
 the field of computational finance aimed at extracting and quantifying the “Voice
 of the Market” (Vox Mercatus). While traditional sentiment analysis systems
 often rely on simple word counting or polarity classification, this project employs
@@ -14,7 +16,8 @@ positional and token embedding, Custom FFN (Feed-Forward Network)
 Architecture which enriches processing data, and many more enhancements, to
 analyze the intensity of emotional expression in technological and product-
 related discussions on platforms such as Reddit, Twitter etc.
-II. Technical Architecture. At the core of PWQ-VM-AI lies a 4-layer
+# II. Technical Architecture. 
+At the core of PWQ-VM-AI lies a 4-layer
 Transformer Network, built from scratch using PyTorch library and Python
 Programming Language. Unlike older AI models, this architecture is capable of
 understanding the sentiment in a sentence, and to whom it is being directed.
@@ -29,9 +32,11 @@ analysis, the Global Average Pooling (GAP) would be applied over all tokens (the
 entire sentence), to extract the sentiment of the entire text. However PWQ-VM-
 AI, is using Target-Specific Average Pooling, which averages only the target
 tokens; thus making PWQ-VM-AI, fully Target-Aware.
-# Calculate Average
+
+```python
 target_token_counts = mask.sum( dim = 1 , keepdim =True).clamp( min = 1 )
 globalAveragePooled = target_vectors.sum( dim = 1 ) / target_token_counts
+```
 
 Adaptive Dropout Layers: Dropout Layers, are typically used to teach neural
 network not to rely on any single neuron while inferencing, by purposefully
@@ -58,7 +63,7 @@ demonstrates superior convergence speed, exceptional stability, and
 near‑optimal final loss – statistically outperforming both Kaiming and
 Orthogonal initializations. Which is exactly the technique behind Perturbated
 Ortho-Normalized Initialization, or PON.
-
+```python
 @staticmethod
 def pon( w : torch.Size, layers : int , mean : float =0.0, std : float =1.0, bias_return : bool =False,
 perturb_bias : bool =True, debug_prints : bool =False) -> Union[torch.nn.Parameter,
@@ -91,8 +96,9 @@ debug._log(f"Returning weight of shape {q_ci.shape}, and bias of shape
 {pbm.shape}")
 return torch.nn.Parameter(q_ci).to("cuda"), torch.nn.Parameter(pbm).to("cuda")
 return torch.nn.Parameter(q_ci).to("cuda")
+```
 
-III. Scientific Objective and Hypothesis.
+# III. Scientific Objective and Hypothesis.
 •PWQ-VM-AI's scientific objective: to investigate the correlation between
 emotional intensity in social media discourse and real-world product success.
 The project seeks to determine whether a Target-Aware Transformer AI model
@@ -108,7 +114,7 @@ non-biased / objective method of evaluation of product’s success using three
 distinct areas: predecessor comparison (units sold), spendings recovery (>85%
 in 3 month period from release date), and a highly-reliable multi-source average
 top leaderboard standings (>top 5).
-
+```python
 def PredecessorComparison( self , model_sales : Union[ int , float ], model_price : Union[ int ,
 float ], predecessor_sales : Union[ int , float ], predecessor_price : Union[ int , float ]) ->
 
@@ -136,6 +142,7 @@ base_prctng = 3.
 multiplier = 10 base_prctng - ( top10avg_place - 1 )base_prctng
 final_ratio_prctng = multiplier if 33.34 >= multiplier > 0 else 0
 return leaderboard_bool, final_ratio_prctng
+```
 
 Using PWQ-VM-AI's intelligence, to extract sentiment from hundreds of
 opinions / comments from social media, then summing up and computing
@@ -148,7 +155,8 @@ and hard-to-understand data, the accuracy is closer to ~74-78%.
 iPhone 17 Pro Max -> 92.5% Success Rate | 6.7% Positivity of Sentiment
 NVIDIA RTX 5090 - > 68.5% Success Rate | 20.4% Positivity of Sentiment
 Avatar 3: Fire and Ash -> 19.2% Success Rate | 16.8% Negativity of Sentiment
-IV. Methodology and Real-World Impact. By precisely mapping PWQ-VM-AI, the
+# IV. Methodology and Real-World Impact. 
+By precisely mapping PWQ-VM-AI, the
 project demonstrates how AI can function as a practical tool within behavioral
 economics. The methodology includes:
 
@@ -162,11 +170,12 @@ background and summarize user opinions on a given social media platform.
 The project has direct real-world applications, offering an early-warning system
 for companies launching new products or analysts studying collective
 behavioral patterns.
-V. Ethics and Safety. In compliance with the safety and ethics standards of the
+# V. Ethics and Safety. 
+In compliance with the safety and ethics standards of the
 Acellus Science Fair, PWQ-VM-AI processes only publicly available data. All
 usernames and personal identifiers are removed during pre-processing stage,
 ensuring full anonymity and protection of individual privacy.
-VI. **Competitive Landscape.
+# VI. **Competitive Landscape.
 Brandwatch: AI-Powered social listening platform that monitors online
 conversations and performs sentiment analysis for brands, products and
 markets.
@@ -180,7 +189,8 @@ TipRanks: A financial analytics platform that aggregates analyst opinions,
 financial blogs, and market data to support investment decision-making.
 FinBERT: Domain-specific NLP model trained on financial text to classify
 sentiment and extract insights from financial documents and discussions.**
-VII. What makes PWQ-VM-AI Different. PWQ-VM-AI does not merely classify
+# VII. What makes PWQ-VM-AI Different. 
+PWQ-VM-AI does not merely classify
 sentiment as negative or positive, but quantifies the intesity and temporal
 dynamics of collective emotions expressed in public discourse. The model is
 trained on a distinct, purpose-built, fine-tuned dataset, contructed specifically
@@ -191,6 +201,7 @@ Adaptive Dropout Layers with adjustable parameter per layer, per tensor, and a
 customized FFN architecture with enriches processed data, all to detect textual
 emotions, making it fundamentally different from conventional sentiment
 analysis solutions.
+
 Aspect                     Industry Standard                  PWQ-VM-AI V3S^
 
 Sentiment Analysis     Binary positive/negative        Emotional Intensity (0-100%)^
@@ -202,9 +213,10 @@ Architecture (^)        Pre-trained (BERT, etc.)        From-scratch custom Tran
 Output                    Classification only         Barometer visualization + probabilities
 Efficiency              8 - 10GB at batch 32          7.7GB at batch 524 (~19x more efficient)
 
-VIII. Potential Directions for Project Development.
+# VIII. Potential Directions for Project Development.
 
-- VIII.I Technical Development. Firsly, accuracy in detection of advanced
+# - VIII.I Technical Development. 
+Firstly, accuracy in detection of advanced
 emotions such as: irony, sarcasm and mockery, needs to improved. For that PWQ-VM-
 AI V4 will use Emoji & Punctuation Encoding, Contrastive Learning, Sentiment
 Discrepancy Detection, amongst others. Next, is to increase capacity of knowledge.
@@ -214,26 +226,20 @@ idc, idk, icl, imo, etc. Lastly, since the future of PWQ-VM-AI is mostly centere
 financial sentiment and market indication, the model would need to learn how to
 determine if a given market is bearish and bullish, and how that information, could be
 used as a indicator for investment decision-making strategies.
-- VIII.II Substantive Development.
 
+# - VIII.II Substantive Development.
 Cross-Domain Applications: Building on its ability to quantify emotional intensity
 and detect emotional extremes, PWQ-VM-AI can be applied beyond financial
-
 markets to other products, services, and domains such as political discourse, public
 policy evaluation, marketing effectiveness, and consumer trust analysis, functioning
-
 as a behavioral early-warning system.
-
 Multimodal Emotion Analysis: The project can be extended from text-based analysis
 to a multimodal framework by integrating audio and video signals, including vocal
 stress patterns, speech rhythm, facial expressions, and micro-movements, enabling a
-
 deeper and more robust detection of emotional states across different
 communication channels.
-
 Emotional Coherence and Truthfulness Indicators: By combining emotional
 intensity, internal consistency of statements, and cross-modal signal alignment, the
 system may evolve toward an Emotional Coherence Index capable of identifying
-
 emotional instability, manipulation patterns, and potential deviations from truthful
 communication, without relying on semantic content alone.
