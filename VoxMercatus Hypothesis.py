@@ -36,7 +36,7 @@ class _productSuccessDetails(TypedDict):
 class _productSuccessMain(TypedDict):
     RTX_5090: Dict[str, _productSuccessDetails]
 
-# ======| Main Hypothesis Proof Class | ======================================================
+# ======| Main Hypothesis Proof Class | =====================================================
 class PWQ_VM_AI_Hypothesis_Proof:
     CLS_ENTITY_PATTERNS: List[str] = [
         r'\bvs\.?\b',  # "vs" or "vs."
