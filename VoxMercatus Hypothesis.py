@@ -11,7 +11,7 @@ from typing import Sequence, Dict, List, Union, Tuple, TypedDict
 import datetime as dt
 from tqdm import tqdm
 
-# ======| Type Hint Classes | ======================================================
+# ======| Type Hint Classes | =====================================================
 class _productsDescDict(TypedDict):
     SEARCH_QUERY: str
     RELEASE_DATE: str
