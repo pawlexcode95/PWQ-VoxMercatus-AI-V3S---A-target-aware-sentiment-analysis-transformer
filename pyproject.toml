@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pwq_vm_ai" 
+version = "3.0.0" 
+description = "A Target-Aware Sentiment Analysis (TASA) 4-Layer Transformer, with NRoPE Positional encoding, and NRoPE-Disentengled Multi-Head Self-Attention." # Description of the library
+authors = [{ name = "pawlexcode95" }] # Username
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.11" # Version of required python
+dependencies = [
+    "torch",
+    "transformers",
+    "datasets",
+    "pandas",
+    "numpy",
+    "tqdm",
+    "matplotlib",
+    "google-api-python-client",
+    "python-dotenv",
+    "langdetect",
+    "tokenizers",
+    "google-auth",
+    "google-auth-httplib2",
+    "uritemplate"
+] 
+
+[project.urls]
+Homepage = "https://github.com/pawlexcode95/PWQVoxMercatusAI-V3S-TASA-transformer"
+Issues = "https://github.com/pawlexcode95/PWQVoxMercatusAI-V3S-TASA-transformer/issues"
+Main = "https://github.com/pawlexcode95/PWQVoxMercatusAI-V3S-TASA-transformer/tree/main"
+Hypothesis = "https://github.com/pawlexcode95/PWQVoxMercatusAI-V3S-TASA-transformer/tree/hypothesis"
+Model = "https://github.com/pawlexcode95/PWQVoxMercatusAI-V3S-TASA-transformer/blob/main/PWQ-VM-AI%20V3S.py"
+
+[tool.setuptools.packages.find]
+where = ["."]
