@@ -47,7 +47,7 @@ PWQ-VM-AI, it was discovered that a much better way to use Dropout was to
 make that x% a learnable parameter (a value that optimizes during
 backpropagation), meaning each layer and each weight affected by Dropout, can
 have its own % of kill-rate, which improved PWQ-VM-AI final accuracy from
-94.07% to 97.87%!
+94.07% to 97.87%.
 Perturbated Ortho-Normalized Initialization: A very standard initialization
 technique for neural networks is Orthogonal, which combines Orthogonality and
 Normalization of vectors, which makes their distance between each other
