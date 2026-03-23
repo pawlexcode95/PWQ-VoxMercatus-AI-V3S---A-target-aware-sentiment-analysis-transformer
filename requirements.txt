@@ -1,0 +1,27 @@
+# =====================================================
+# PWQ-VM-AI V3S - Core Dependencies
+# =====================================================
+
+# Core Frameworks
+torch==2.5.1+cu121
+transformers==5.0.0
+datasets==4.6.1
+
+# Data & Math
+pandas==3.0.0
+numpy==2.4.1
+tqdm==4.67.1
+
+# Visualization
+matplotlib==3.10.8
+
+# API & Utilities
+google-api-python-client==2.188.0
+python-dotenv==1.2.1
+langdetect==1.0.9
+
+# The "Hidden" Requirements (Required by your imports)
+tokenizers==0.22.2
+google-auth==2.48.0
+google-auth-httplib2==0.3.0
+uritemplate==4.2.0
