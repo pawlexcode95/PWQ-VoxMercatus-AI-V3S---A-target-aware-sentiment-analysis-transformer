@@ -1,0 +1,2 @@
+# PWQ-VoxMercatus-AI-V3S---A-target-aware-sentiment-analysis-transformer
+PWQ-VM-AI is an advanced machine-learning project in the field of computational finance aimed at extracting and quantifying the “Voice of the Market” (Vox Mercatus). This project employs  a 4-Layer Target-Aware Transformer, with Neutralized RoPE managing positional and token embedding, Custom FFN Architecture, to analyze the intensity of emotions.
