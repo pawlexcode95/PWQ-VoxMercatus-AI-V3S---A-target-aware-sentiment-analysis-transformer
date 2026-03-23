@@ -13,7 +13,7 @@ class NRoPE_Settings:
     SDT_L = (BASE_FREQUENCY - MIN_L * BASE_FREQUENCY)*2
     def FREQUENCY_OPTIMIZATION(self, param): return (actv.sigmoid(param) * NRoPE_Settings.SDT_L) + NRoPE_Settings.MIN_L*NRoPE_Settings.BASE_FREQUENCY
     
-# ===========| PWQ NroPE V3 Class |======================================#
+# ===========| PWQ NroPE V3 Class |=====================================#
 class PWQ_NRoPE_V3:
     def __init__(self, embedding_array: torch.Tensor, neutralize_angle: bool = True,angle_neutralization_range: Union[int, float] = 2 * torch.pi,base_frequency: Union[int, float] = 10e3):
         """
